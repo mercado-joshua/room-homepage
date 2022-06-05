@@ -1,0 +1,38 @@
+@use '../utils/breakpoints';
+
+.carousel-wrapper {
+    max-width: 400px;
+
+    @include breakpoints.media-breakpoint-up( 992px ) {
+        max-width: 630px;
+    }
+}
+
+.carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+
+    @include breakpoints.media-breakpoint-up( 992px ) {
+        height: 500px;
+    }
+
+    > .slider {
+        position: relative;
+        height: 100%;
+        transition: transform 250ms ease-in;
+
+        // stack item on top of each other
+        > .item {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%; // important
+
+            .image {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

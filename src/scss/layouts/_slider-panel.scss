@@ -1,0 +1,18 @@
+@use '../utils/breakpoints';
+
+.slider-panel {
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include breakpoints.media-breakpoint-up( 830px ) {
+        max-width: unset;
+        margin: unset;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+
+    @include breakpoints.media-breakpoint-up( 992px ) {
+        align-items: flex-start;
+    }
+}

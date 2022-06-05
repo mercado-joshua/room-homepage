@@ -1,0 +1,42 @@
+@use '../utils/breakpoints';
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+
+    > .primary-menu {
+        display: none;
+    }
+
+    > .image {
+        margin: 0 auto;
+    }
+
+    @include breakpoints.media-breakpoint-up( 992px ) {
+        justify-content: space-between;
+        
+        > .image {
+            margin: 0;
+        }
+
+        > .primary-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        > .menu-btn {
+            display: none;
+        }
+    }
+}
+
+.primary-menu {
+    > .item {
+        > .link {
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+}

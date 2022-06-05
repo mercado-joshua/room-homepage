@@ -1,0 +1,39 @@
+@use '../utils/breakpoints';
+
+.slider-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    > .carousel-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+        z-index: 1;
+    }
+
+    > .nav-section {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        z-index: 10;
+    }
+
+    > .mobile-controls {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        z-index: 10;
+        justify-self: flex-end;
+        display: flex;
+    }
+
+    @include breakpoints.media-breakpoint-up( 830px ) {
+        width: 400px;
+    }
+
+    @include breakpoints.media-breakpoint-up( 992px ) {
+        width: 630px;
+
+        > .mobile-controls {
+            display: none;
+        }
+    }
+}
